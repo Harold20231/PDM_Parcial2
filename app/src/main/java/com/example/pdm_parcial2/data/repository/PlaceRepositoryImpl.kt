@@ -1,7 +1,7 @@
 package com.example.pdm_parcial2.data.repository
 
 import com.example.pdm_parcial2.data.api.RankeUcaApi
-import com.rankeuca.data.api.mapper.toDomain
+import com.example.pdm_parcial2.data.api.dto.mapper.toDomain
 import com.example.pdm_parcial2.domain.model.Place
 import com.example.pdm_parcial2.domain.repository.PlaceRepository
 
