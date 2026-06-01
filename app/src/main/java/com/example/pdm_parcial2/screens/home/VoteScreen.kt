@@ -1,60 +1,32 @@
-package com.example.pdm_parcial2.screens.home
+package com.pdmcourse2026.basictemplate.screens.home
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import com.example.ui.components.ErrorView
-import com.example.ui.components.LoadingView
-import com.example.ui.components.PlaceCard
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun VoteScreen(
-    viewModel: VoteViewModel,
-    onNavigateToResults: () -> Unit
-) {
-    val uiState by viewModel.uiState.collectAsState()
-
+fun HomeScreen() {
     Scaffold(
-        topBar = { TopAppBar(title = { Text("Votar - ¿Dónde almorzamos?") }) },
-        floatingActionButton = {
-            if (uiState is VoteUiState.Success && (uiState as VoteUiState.Success).selectedPlaceId != null) {
-                FloatingActionButton(onClick = onNavigateToResults) {
-                    Text("Ir a resultados")
-                }
-            }
+        topBar = {
+            TopAppBar(
+                colors = topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.primary,
+                ),
+                title = { Text("RankeUca - Vota") },
+            )
         }
-    ) { paddingValues ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues),
-            contentAlignment = Alignment.Center
-        ) {
-            when (uiState) {
-                is VoteUiState.Loading -> LoadingView()
-                is VoteUiState.Error -> ErrorView((uiState as VoteUiState.Error).message) {
-                    viewModel.loadPlaces()
-                }
-                is VoteUiState.Success -> {
-                    val state = uiState as VoteUiState.Success
-                    LazyColumn {
-                        items(state.places.size) { index ->
-                            val place = state.places[index]
-                            PlaceCard(
-                                place = place,
-                                isSelected = place.id == state.selectedPlaceId,
-                                onVote = { viewModel.vote(place.id) }
-                            )
-                        }
-                    }
-                }
-            }
+    ) { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            Text(text = "Home Screen")
         }
     }
 }
