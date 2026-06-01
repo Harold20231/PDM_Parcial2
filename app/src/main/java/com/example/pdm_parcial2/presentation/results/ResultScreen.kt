@@ -9,7 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.pdm_parcial2.ui.
+import com.example.pdm_parcial2.ui
 import com.rankeuca.ui.components.ErrorView
 import com.rankeuca.ui.components.LoadingView
 

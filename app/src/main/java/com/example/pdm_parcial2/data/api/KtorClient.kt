@@ -1,4 +1,4 @@
-package com.example.pdm_parcial2.data.api.
+package com.example.pdm_parcial2.data.api
 import android.util.Log
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp

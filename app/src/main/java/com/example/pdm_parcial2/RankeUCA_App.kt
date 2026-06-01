@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.pdmcourse2026.basictemplate.screens.home.HomeScreen
+import com.example.pdm_parcial2.screens.home.HomeScreen
 
 @Composable
 fun RankeUCA_App() {

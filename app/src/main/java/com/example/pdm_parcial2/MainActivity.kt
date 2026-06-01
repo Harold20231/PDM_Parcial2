@@ -21,7 +21,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            RankeUCATheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -29,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavGraph(navController = navController)
                 }
-            }
+
         }
     }
 }

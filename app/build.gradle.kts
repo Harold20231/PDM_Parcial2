@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.firebase.crashlytics.buildtools)
     implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

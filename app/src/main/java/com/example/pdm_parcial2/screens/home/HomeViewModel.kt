@@ -4,11 +4,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pdm_parcial2.di.AppModule
 import com.example.pdm_parcial2.domain.model.Place
+import com.example.pdm_parcial2.presentation.vote.VoteUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class VoteViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
     private val repository = AppModule.placeRepository
 
     private val _uiState = MutableStateFlow<VoteUiState>(VoteUiState.Loading)
