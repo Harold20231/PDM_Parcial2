@@ -1,15 +1,16 @@
 package com.example.pdm_parcial2.presentation.navigation
 
 
+import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.rankeuca.presentation.results.ResultsScreen
-import com.rankeuca.presentation.results.ResultsViewModel
-import com.rankeuca.presentation.vote.VoteScreen
-import com.rankeuca.presentation.vote.VoteViewModel
+import com.example.pdm_parcial2.presentation.results.ResultsViewModel
+import com.example.pdm_parcial2.presentation.results.ResultsScreen
+import com.example.pdm_parcial2.screens.home.VoteScreen
 
+@SuppressLint("ViewModelConstructorInComposable")
 @Composable
 fun NavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Routes.Vote.route) {
@@ -30,4 +31,9 @@ fun NavGraph(navController: NavHostController) {
             )
         }
     }
+}
+
+@Composable
+fun VoteViewModel() {
+    TODO("Not yet implemented")
 }
